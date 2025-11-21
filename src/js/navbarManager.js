@@ -133,8 +133,16 @@ function updateNavbarUI(user) {
   if (user) {
     // ✅ User logged in
     if (profileImg) {
-      profileImg.src = user.profile_image || "./imgs/no-profile-photo.webp";
+      profileImg.src = user.profile_image || "../../imgs/no-profile-photo.webp";
       profileImg.style.display = "block";
+
+      profileImg.src =
+        typeof user.profile_image !== "object"
+          ? user.profile_image
+          : "../../imgs/no-profile-photo.webp";
+      profileImg.onerror = function () {
+        this.src = "../../imgs/no-profile-photo.webp";
+      };
     }
     if (userName) {
       userName.textContent = user.username || user.name;

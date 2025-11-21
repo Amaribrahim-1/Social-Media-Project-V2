@@ -21,9 +21,9 @@ function createPostCard(postData, currentUserId) {
   userPhoto.src =
     typeof postData.author.profile_image !== "object"
       ? postData.author.profile_image
-      : "./imgs/no-profile-photo.webp";
+      : "../../imgs/no-profile-photo.webp";
   userPhoto.onerror = function () {
-    this.src = "./imgs/no-profile-photo.webp";
+    this.src = "../../imgs/no-profile-photo.webp";
   };
 
   const userName_postTime = document.createElement("div");
@@ -169,9 +169,9 @@ function createCommentsSection(comments) {
       comment.author.profile_image &&
       typeof comment.author.profile_image === "string"
         ? comment.author.profile_image
-        : "./imgs/no-profile-photo.webp";
+        : "../../imgs/no-profile-photo.webp";
     userPhoto.onerror = function () {
-      this.src = "./imgs/no-profile-photo.webp";
+      this.src = "../../imgs/no-profile-photo.webp";
     };
 
     // ✅ محتوى التعليق
@@ -236,9 +236,9 @@ function displayUserProfile(user) {
     profileAvatar.src =
       user.profile_image && typeof user.profile_image === "string"
         ? user.profile_image
-        : "./imgs/no-profile-photo.webp";
+        : "../../imgs/no-profile-photo.webp";
     profileAvatar.onerror = function () {
-      this.src = "./imgs/no-profile-photo.webp";
+      this.src = "../../imgs/no-profile-photo.webp";
     };
   }
 
